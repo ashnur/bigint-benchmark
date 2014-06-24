@@ -1,0 +1,17 @@
+{
+  "name": "bigint-benchmark",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "BigInt": "^5.4.5",
+    "arb": "git+ssh://git@github.com:ashnur/arb.git",
+    "biginteger": "^1.0.3",
+    "bn.js": "^0.12.0"
+  }
+}
