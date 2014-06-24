@@ -6,7 +6,7 @@ var strings = require('./food.js')
 
 function test(){
   var numbers = []
-  var addition_results = []
+  var results = []
   for ( var i = 0; i < strings.length; i++ ) {
     var n = gmp.ccall('new_mpz_var', 'number')
     gmp.ccall('w_mpz_set_str', '', ['number', 'string', 'number'], [n, strings[i], 10])
@@ -14,17 +14,17 @@ function test(){
   }
   return {
     clean: function clear(){
-      for ( var i = 0; i < addition_results.length; i++ ) {
-        gmp.ccall('del_mpz_var', '', ['number'], [addition_results[i]])
+      for ( var i = 0; i < results.length; i++ ) {
+        gmp.ccall('del_mpz_var', '', ['number'], [results[i]])
       }
-      addition_results = []
+      results = []
     }
   , addition: function addition(){
       for ( var i = 0; i < numbers.length; i++ ) {
         for ( var j = 0; j < numbers.length; j++ ) {
           var r = gmp.ccall('new_mpz_var', 'number')
           gmp.ccall('w_mpz_add', '', ['number', 'number', 'number'], [r, numbers[i], numbers[j]]);
-          addition_results.push(r)
+          results.push(r)
         }
       }
     }

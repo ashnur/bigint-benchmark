@@ -25,9 +25,9 @@ function equal(n){
 }
 
 // generate 50 random numbers
-while ( numbers.length < 12 ) {
-  var n = numbers.length < 3 ? tiny()
-        : numbers.length < 6 ? small() : large()
+while ( numbers.length < 20 ) {
+  var n = numbers.length < 5 ? tiny()
+        : numbers.length < 10 ? small() : large()
   if ( numbers.some(equal(n)) ) continue
   numbers.push(n)
   food_txt.write(arb.to_dec(n)+'\n')
