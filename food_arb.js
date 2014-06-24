@@ -24,19 +24,14 @@ function equal(n){
   }
 }
 
-var slices = 0
-function generate(){
-  // generate 50 random numbers
-  while ( numbers.length < 75 ) {
-    var n = numbers.length < 25 ? tiny()
-          : numbers.length < 50 ? small() : large()
-    if ( numbers.some(equal(n)) ) continue
-    numbers.push(n)
-    food_txt.write(arb.to_dec(n)+'\n')
-    if ( ++slices % 10 == 0 ) return process.nextTick(generate)
-  }
+// generate 50 random numbers
+while ( numbers.length < 12 ) {
+  var n = numbers.length < 3 ? tiny()
+        : numbers.length < 6 ? small() : large()
+  if ( numbers.some(equal(n)) ) continue
+  numbers.push(n)
+  food_txt.write(arb.to_dec(n)+'\n')
 }
-generate()
 
 
 // var pairs = Array.apply(null, Array(25)).map(function(_,i){ return [i, 49 - i]})

@@ -12,6 +12,7 @@
     "BigInt": "^5.4.5",
     "arb": "git+ssh://git@github.com:ashnur/arb.git",
     "biginteger": "^1.0.3",
-    "bn.js": "^0.12.0"
+    "bn.js": "^0.12.0",
+    "microtime": "^0.6.0"
   }
 }
