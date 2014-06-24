@@ -1,0 +1,32 @@
+<html>
+<head>
+  <meta charset="utf-8"> 
+  <script src="gmp_wrapper.js"></script>
+</head>
+<body>
+  <script>
+    // ez csak egyetlenegyszer, az elejen kell meghivni
+    Module.ccall('init_mpz_vars');
+    
+    // valtozok letrehozasa
+    var a = Module.ccall('new_mpz_var', 'number');
+    var b = Module.ccall('new_mpz_var', 'number');
+    var c = Module.ccall('new_mpz_var', 'number');
+    
+    // ertekadas a-nak es b-nek
+    Module.ccall('w_mpz_set_str', '', ['number', 'string', 'number'], [a, '1111111111111111111111111111111111111111111111111111111111111111111111111111111111111', 10]);
+    Module.ccall('w_mpz_set_str', '', ['number', 'string', 'number'], [b, '2222222222222222222222222222222222222222222222222222222222222222222222222222222222222', 10]);
+    
+    // a es b osszeadasa -> eredmeny a c-ben
+    Module.ccall('w_mpz_add', '', ['number', 'number', 'number'], [c, a, b]);
+    
+    // c atalakitasa szovegge, megjelenites
+    var c_str = Module.ccall('w_mpz_get_str', 'string', ['number', 'number'], [10, c]);
+    alert(c_str);    
+    
+    // valtozok torlese
+    Module.ccall('del_mpz_var', '', ['number'], [a]);
+    Module.ccall('del_mpz_var', '', ['number'], [b]);
+    Module.ccall('del_mpz_var', '', ['number'], [c]);
+  </script>
+</body>
