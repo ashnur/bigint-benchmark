@@ -12,7 +12,7 @@ var fs = require('fs')
 var food_txt = fs.createWriteStream('./food.txt')
 
 
-var numbers = [zero, one, negone]
+var numbers = [one, negone]
 
 food_txt.write(arb.to_dec(zero)+'\n')
 food_txt.write(arb.to_dec(one)+'\n')
