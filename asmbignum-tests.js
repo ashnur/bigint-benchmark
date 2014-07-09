@@ -1,6 +1,6 @@
 module.exports = test
 var fs = require('fs')
-var asmcrypto = require('asmcrypto.js')
+var asmcrypto = require('../asmcrypto.js/asmcrypto.js')
 
 var asmbn = asmcrypto.BigNumber
 
